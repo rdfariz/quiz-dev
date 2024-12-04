@@ -1,0 +1,20 @@
+[
+  {
+    "question": "Apa nama candi yang terkenal di Jawa Tengah dan merupakan salah satu keajaiban dunia?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Candi Borobudur.", "value": false },
+      { "label": "Candi Borobudur 2", "value": true },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  },
+  {
+    "question": "Apa nama candi yang terkenal di Jawa Tengah dan merupakan salah satu keajaiban dunia?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Candi Borobudur.", "value": false },
+      { "label": "Candi Borobudur 2", "value": true },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  }
+]
