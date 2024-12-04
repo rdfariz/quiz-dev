@@ -1,19 +1,101 @@
 [
   {
+    "idQuestion": 1,
     "question": "Apa nama candi yang terkenal di Jawa Tengah dan merupakan salah satu keajaiban dunia?",
     "answered": false,
     "listOptions": [
-      { "label": "Candi Borobudur.", "value": false },
-      { "label": "Candi Borobudur 2", "value": true },
+      { "label": "Candi Borobudur.", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
       { "label": "Candi Borobudur 3", "value": false }
     ]
   },
   {
-    "question": "Apa nama candi yang terkenal di Jawa Tengah dan merupakan salah satu keajaiban dunia?",
+    "idQuestion": 2,
+    "question": "Siapa penemu bola lampu?",
     "answered": false,
     "listOptions": [
-      { "label": "Candi Borobudur.", "value": false },
-      { "label": "Candi Borobudur 2", "value": true },
+      { "label": "Thomas Alva Edison", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 3,
+    "question": "Planet terbesar di tata surya kita adalah?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Jupiter", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 4,
+    "question": "Apa nama gunung tertinggi di dunia?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Gunung Everest", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 5,
+    "question": "Nasi apa yang kuning?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Nasi Kuning", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 6,
+    "question": "Siapa presidQuestionen pertama Republik Indonesia?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Ir. Soekarno", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 7,
+    "question": "Kalau kura-kura kehilangan cangkangnya, jadi apa dia?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Tunawisma", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 8,
+    "question": "Apa yang ada di tengah-tengah Jakarta?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Huruf K", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 9,
+    "question": "Kenapa ayam suka nyebrang jalan?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena mau cari tempat nongkrong di seberang", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
+      { "label": "Candi Borobudur 3", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 10,
+    "question": "Kenapa burung suka berkicau?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena nggak punya pulsa buat nelpon", "value": true },
+      { "label": "Candi Borobudur 2", "value": false },
       { "label": "Candi Borobudur 3", "value": false }
     ]
   }
