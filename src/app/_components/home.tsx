@@ -17,43 +17,43 @@ export default function Home() {
   const [isErrorRequired, setIsErrorRequired] = useState(false)
   const [isContinue, setIsContinue] = useState(false)
   const [isAllDone, setIsAllDone] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const asyncLocalStorage = {
-    setItem(key: string, value: any) {
-      if (typeof window !== "undefined" && localStorage) {
-        return Promise.resolve().then(function () {
-          localStorage.setItem(key, value);
-        });
-      }
-    },
-    getItem(key: string) {
-      if (typeof window !== "undefined" && localStorage) {
-        return Promise.resolve().then(function () {
-          return localStorage.getItem(key);
-        });
-      } else
-      return Promise.resolve().then(function () {
-        return
-      });
-    }
-  };
+  // const asyncLocalStorage = {
+  //   setItem(key: string, value: any) {
+  //     if (typeof window !== "undefined" && localStorage) {
+  //       return Promise.resolve().then(function () {
+  //         localStorage.setItem(key, value);
+  //       });
+  //     }
+  //   },
+  //   getItem(key: string) {
+  //     if (typeof window !== "undefined" && localStorage) {
+  //       return Promise.resolve().then(function () {
+  //         return localStorage.getItem(key);
+  //       });
+  //     } else
+  //     return Promise.resolve().then(function () {
+  //       return
+  //     });
+  //   }
+  // };
 
-  useEffect(() => {
-    try {
-      if (typeof window !== "undefined" && localStorage) {
-        asyncLocalStorage.getItem('listPerson')
-          .then((res: any) => {
-            setListPerson(JSON.parse(res))
-            setTimeout(() => {
-              setIsLoading(false)
-            }, 1500);
-          })   
-      }
-    } catch (error) {
-      console.error('Error while setting data in localStorage:', error);
-    }
-  }, [])
+  // useEffect(() => {
+  //   try {
+  //     if (typeof window !== "undefined" && localStorage) {
+  //       asyncLocalStorage.getItem('listPerson')
+  //         .then((res: any) => {
+  //           setListPerson(JSON.parse(res))
+  //           setTimeout(() => {
+  //             setIsLoading(false)
+  //           }, 1500);
+  //         })   
+  //     }
+  //   } catch (error) {
+  //     console.error('Error while setting data in localStorage:', error);
+  //   }
+  // }, [])
   
   const renderOptionSymbol = (index: number = 0) => {
     if (index === 0) {
