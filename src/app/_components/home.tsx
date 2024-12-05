@@ -19,32 +19,32 @@ export default function Home() {
   const [isAllDone, setIsAllDone] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
-  const asyncLocalStorage = {
-    setItem(key: string, value: any) {
-      if (typeof window !== "undefined") {
-        return Promise.resolve().then(function () {
-          localStorage.setItem(key, value);
-        });
-      }
-    },
-    getItem(key: string) {
-      return Promise.resolve().then(function () {
-        return localStorage.getItem(key);
-      });
-    }
-  };
+  // const asyncLocalStorage = {
+  //   setItem(key: string, value: any) {
+  //     if (typeof window !== "undefined") {
+  //       return Promise.resolve().then(function () {
+  //         localStorage.setItem(key, value);
+  //       });
+  //     }
+  //   },
+  //   getItem(key: string) {
+  //     return Promise.resolve().then(function () {
+  //       return localStorage.getItem(key);
+  //     });
+  //   }
+  // };
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      asyncLocalStorage.getItem('listPerson')
-        .then((res: any) => {
-          setListPerson(JSON.parse(res))
-          setTimeout(() => {
-            setIsLoading(false)
-          }, 1500);
-        })
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     asyncLocalStorage.getItem('listPerson')
+  //       .then((res: any) => {
+  //         setListPerson(JSON.parse(res))
+  //         setTimeout(() => {
+  //           setIsLoading(false)
+  //         }, 1500);
+  //       })
+  //   }
+  // }, [])
   
   const renderOptionSymbol = (index: number = 0) => {
     if (index === 0) {
@@ -106,9 +106,9 @@ export default function Home() {
         inputRef.current.focus()
       }
 
-      if (typeof window !== "undefined") {
-        localStorage?.setItem('listPerson', JSON.stringify(listPerson))
-      }
+      // if (typeof window !== "undefined") {
+      //   localStorage?.setItem('listPerson', JSON.stringify(listPerson))
+      // }
     }
   }
 
@@ -130,9 +130,9 @@ export default function Home() {
       setActivePerson(null)
     }
 
-    if (typeof window !== "undefined") {
-      localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
-    }
+    // if (typeof window !== "undefined") {
+    //   localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
+    // }
   }
 
   const handleStartGame = (val: boolean = true) => {
@@ -155,9 +155,9 @@ export default function Home() {
   const handleDeletePerson = (id: number) => {
     const newListPerson = listPerson.filter((item: any) => item.id !== id)
     setListPerson(newListPerson)
-    if (typeof window !== "undefined") {
-      localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
-    }
+    // if (typeof window !== "undefined") {
+    //   localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
+    // }
 
     if (activePerson && activePerson.id === id) {
       const getNextPerson = newListPerson.filter((item: any) => !item.isDone)
