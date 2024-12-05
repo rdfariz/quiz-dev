@@ -1,6 +1,6 @@
 "use client"
-import { useEffect, useRef, useState } from 'react';
-import { AlertTriangle, Trash, File, Check, X } from 'react-feather'
+import { useEffect, useState } from 'react';
+import { Trash, Check, X } from 'react-feather'
 
 export default function Component({
   data = {},
@@ -9,7 +9,7 @@ export default function Component({
   handleIsCollapse = () => {},
   isCollapse = false
 }: {
-  data: any, handleDelete: Function, handleSelected: Function, handleIsCollapse: Function, isCollapse: boolean
+  data: any, handleDelete: (id: any) => void, handleSelected: (data: any) => void, handleIsCollapse: (val: boolean) => void, isCollapse: boolean
 }) {
   const [isDetail, setIsDetail] = useState(false)
 

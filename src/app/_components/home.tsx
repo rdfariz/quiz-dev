@@ -171,6 +171,7 @@ export default function Home() {
   }
 
   const handleDeletePerson = (id: number) => {
+    if (!id) return
     const newListPerson = listPerson.filter((item: any) => item.id !== id)
     setListPerson(newListPerson)
     try {
