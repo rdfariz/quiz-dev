@@ -17,14 +17,14 @@ export default function Home() {
   const [isErrorRequired, setIsErrorRequired] = useState(false)
   const [isContinue, setIsContinue] = useState(false)
   const [isAllDone, setIsAllDone] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     try {
       if (typeof window !== "undefined" && localStorage) {
         const getItem = (key: string) => {
           return Promise.resolve().then(function () {
-            return localStorage.getItem(key);
+            return localStorage.getItem(key) || '';
           });
         }
 
