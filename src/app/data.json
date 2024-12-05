@@ -51,7 +51,7 @@
   },
   {
     "idQuestion": 6,
-    "question": "Siapa presidQuestionen pertama Republik Indonesia?",
+    "question": "Siapa presiden pertama Republik Indonesia?",
     "answered": false,
     "listOptions": [
       { "label": "Ir. Soekarno", "value": true },
