@@ -1,13 +1,13 @@
 "use client"
-import data from '@/app/data.json'
+// import data from '@/app/data.json'
 import { useEffect, useRef, useState } from 'react';
 import { AlertTriangle, Trash, Check, X } from 'react-feather'
-import short from 'short-uuid'
+// import short from 'short-uuid'
 // import LottieData from '@/app/_assets/lottie/Animation - 1733357726977.json'
 // import Lottie from 'lottie-react'
 
 export default function Home() {
-  const [listQuestion, setListQuestion]: any = useState(data)
+  const [listQuestion, setListQuestion]: any = useState([])
   const [listPerson, setListPerson]: any = useState([])
   const [activePerson, setActivePerson]: any = useState(null)
   const inputRef: any = useRef(null)
@@ -85,7 +85,7 @@ export default function Home() {
       return
     }
 
-    const userObj: any = { id: short.generate() || listPerson.length + 1, name: namePerson, isDone: false }
+    const userObj: any = { id: listPerson.length + 1, name: namePerson, isDone: false }
     const questionObj: any = getRandomQuestion()
     const personObj: any = { ...userObj, question: { ...questionObj }}
 
