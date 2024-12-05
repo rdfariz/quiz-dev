@@ -31,10 +31,11 @@ export default function Home() {
         getItem('listPerson')
           .then((res: any) => {
             setListPerson(JSON.parse(res))
+          }).finally {
             setTimeout(() => {
               setIsLoading(false)
             }, 1500);
-          })   
+          }
       }
     } catch (error) {
       console.error('Error while setting data in localStorage:', error);
