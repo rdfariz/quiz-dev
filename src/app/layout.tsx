@@ -10,7 +10,7 @@ const nunitoFont = Nunito({
 
 export const metadata: Metadata = {
   title: "Quizz Dev / Edu",
-  description: "Quizz Dev Edu, website game quiz simpel.",
+  description: "Quizz Dev Edu - Website game quiz simpel.",
 };
 
 export default function RootLayout({
