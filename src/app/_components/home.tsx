@@ -44,7 +44,7 @@ export default function Home() {
           }, 1500);
         })
     }
-  })
+  }, [])
   
   const renderOptionSymbol = (index: number = 0) => {
     if (index === 0) {
