@@ -55,9 +55,9 @@ export default function Home() {
   }
   
   const getRandomQuestion = () => {
-    let allQuestionRandom = listQuestion[Math.floor(Math.random() * listQuestion.length)]
-    let questionNotAnswered = listQuestion.filter((item: any) => item.answered === false) 
-    let res = questionNotAnswered[Math.floor(Math.random() * questionNotAnswered.length)]
+    const allQuestionRandom = listQuestion[Math.floor(Math.random() * listQuestion.length)]
+    const questionNotAnswered = listQuestion.filter((item: any) => item.answered === false) 
+    const res = questionNotAnswered[Math.floor(Math.random() * questionNotAnswered.length)]
 
     if (res) {
       const payloadQuestion = listQuestion.map((item: any) => item.idQuestion === res.idQuestion
