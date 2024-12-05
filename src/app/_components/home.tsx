@@ -2,7 +2,7 @@
 // import data from '@/app/data.json'
 import { useEffect, useRef, useState } from 'react';
 import { AlertTriangle, Trash, Check, X } from 'react-feather'
-// import short from 'short-uuid'
+import short from 'short-uuid'
 // import LottieData from '@/app/_assets/lottie/Animation - 1733357726977.json'
 // import Lottie from 'lottie-react'
 
@@ -19,32 +19,32 @@ export default function Home() {
   const [isAllDone, setIsAllDone] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
-  // const asyncLocalStorage = {
-  //   setItem(key: string, value: any) {
-  //     if (typeof window !== "undefined") {
-  //       return Promise.resolve().then(function () {
-  //         localStorage.setItem(key, value);
-  //       });
-  //     }
-  //   },
-  //   getItem(key: string) {
-  //     return Promise.resolve().then(function () {
-  //       return localStorage.getItem(key);
-  //     });
-  //   }
-  // };
+  const asyncLocalStorage = {
+    setItem(key: string, value: any) {
+      if (typeof window !== "undefined" && localStorage) {
+        return Promise.resolve().then(function () {
+          localStorage.setItem(key, value);
+        });
+      }
+    },
+    getItem(key: string) {
+      return Promise.resolve().then(function () {
+        return localStorage.getItem(key);
+      });
+    }
+  };
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     asyncLocalStorage.getItem('listPerson')
-  //       .then((res: any) => {
-  //         setListPerson(JSON.parse(res))
-  //         setTimeout(() => {
-  //           setIsLoading(false)
-  //         }, 1500);
-  //       })
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (typeof window !== "undefined" && localStorage) {
+      asyncLocalStorage.getItem('listPerson')
+        .then((res: any) => {
+          setListPerson(JSON.parse(res))
+          setTimeout(() => {
+            setIsLoading(false)
+          }, 1500);
+        })
+    }
+  }, [])
   
   const renderOptionSymbol = (index: number = 0) => {
     if (index === 0) {
@@ -85,7 +85,7 @@ export default function Home() {
       return
     }
 
-    const userObj: any = { id: listPerson.length + 1, name: namePerson, isDone: false }
+    const userObj: any = { id: short?.generate() || listPerson.length + 1, name: namePerson, isDone: false }
     const questionObj: any = getRandomQuestion()
     const personObj: any = { ...userObj, question: { ...questionObj }}
 
@@ -106,9 +106,9 @@ export default function Home() {
         inputRef.current.focus()
       }
 
-      // if (typeof window !== "undefined") {
-      //   localStorage?.setItem('listPerson', JSON.stringify(listPerson))
-      // }
+      if (typeof window !== "undefined" && localStorage) {
+        localStorage?.setItem('listPerson', JSON.stringify(listPerson))
+      }
     }
   }
 
@@ -130,9 +130,9 @@ export default function Home() {
       setActivePerson(null)
     }
 
-    // if (typeof window !== "undefined") {
-    //   localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
-    // }
+    if (typeof window !== "undefined" && localStorage) {
+      localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
+    }
   }
 
   const handleStartGame = (val: boolean = true) => {
@@ -155,9 +155,9 @@ export default function Home() {
   const handleDeletePerson = (id: number) => {
     const newListPerson = listPerson.filter((item: any) => item.id !== id)
     setListPerson(newListPerson)
-    // if (typeof window !== "undefined") {
-    //   localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
-    // }
+    if (typeof window !== "undefined" && localStorage) {
+      localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
+    }
 
     if (activePerson && activePerson.id === id) {
       const getNextPerson = newListPerson.filter((item: any) => !item.isDone)
