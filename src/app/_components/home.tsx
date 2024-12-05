@@ -3,8 +3,8 @@ import data from '@/app/data.json'
 import { useEffect, useRef, useState } from 'react';
 import { AlertTriangle, Trash, Check, X } from 'react-feather'
 import short from 'short-uuid'
-import LottieData from '@/assets/lottie/Animation - 1733357726977.json'
-import Lottie from 'lottie-react'
+// import LottieData from '@/app/_assets/lottie/Animation - 1733357726977.json'
+// import Lottie from 'lottie-react'
 
 export default function Home() {
   const [listQuestion, setListQuestion]: any = useState(data)
@@ -346,7 +346,7 @@ export default function Home() {
         </>
       ) : (
         <div className="flex flex-col items-center flex-wrap">
-          <Lottie style={{ width: '50%' }} animationData={LottieData} loop={true} />
+          {/* <Lottie style={{ width: '50%' }} animationData={LottieData} loop={true} /> */}
           <p className="relative z-10 font-semibold text-[#868d96] mt-[-40px]">Memuat..</p>
         </div>
       )}

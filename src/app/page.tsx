@@ -1,8 +1,5 @@
-"use client"
-import dynamic from 'next/dynamic'
-
-const DynamicComponentWithNoSSR = dynamic(() => import('@/app/_components/home'), { ssr: false })
+import Component from '@/app/_components/home'
 
 export default function Home() {
-  return (<DynamicComponentWithNoSSR / >);
+  return (<Component / >);
 }
