@@ -1,5 +1,5 @@
 "use client"
-// import data from '@/app/data.json'
+import data from '@/app/data.json'
 import { useEffect, useRef, useState } from 'react';
 import { AlertTriangle, Trash, Check, X } from 'react-feather'
 import short from 'short-uuid'
@@ -7,7 +7,7 @@ import short from 'short-uuid'
 // import Lottie from 'lottie-react'
 
 export default function Home() {
-  const [listQuestion, setListQuestion]: any = useState([])
+  const [listQuestion, setListQuestion]: any = useState(data)
   const [listPerson, setListPerson]: any = useState([])
   const [activePerson, setActivePerson]: any = useState(null)
   const inputRef: any = useRef(null)
@@ -28,21 +28,30 @@ export default function Home() {
       }
     },
     getItem(key: string) {
+      if (typeof window !== "undefined" && localStorage) {
+        return Promise.resolve().then(function () {
+          return localStorage.getItem(key);
+        });
+      } else
       return Promise.resolve().then(function () {
-        return localStorage.getItem(key);
+        return
       });
     }
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined" && localStorage) {
-      asyncLocalStorage.getItem('listPerson')
-        .then((res: any) => {
-          setListPerson(JSON.parse(res))
-          setTimeout(() => {
-            setIsLoading(false)
-          }, 1500);
-        })
+    try {
+      if (typeof window !== "undefined" && localStorage) {
+        asyncLocalStorage.getItem('listPerson')
+          .then((res: any) => {
+            setListPerson(JSON.parse(res))
+            setTimeout(() => {
+              setIsLoading(false)
+            }, 1500);
+          })   
+      }
+    } catch (error) {
+      console.error('Error while setting data in localStorage:', error);
     }
   }, [])
   
@@ -106,8 +115,12 @@ export default function Home() {
         inputRef.current.focus()
       }
 
-      if (typeof window !== "undefined" && localStorage) {
-        localStorage?.setItem('listPerson', JSON.stringify(listPerson))
+      try {
+        if (typeof window !== "undefined" && localStorage) {
+          localStorage?.setItem('listPerson', JSON.stringify(listPerson))
+        }
+      } catch (error) {
+        console.error('Error while setting data in localStorage:', error);
       }
     }
   }
@@ -130,8 +143,12 @@ export default function Home() {
       setActivePerson(null)
     }
 
-    if (typeof window !== "undefined" && localStorage) {
-      localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
+    try {
+      if (typeof window !== "undefined" && localStorage) {
+        localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
+      }
+    } catch (error) {
+      console.error('Error while setting data in localStorage:', error);
     }
   }
 
@@ -155,8 +172,12 @@ export default function Home() {
   const handleDeletePerson = (id: number) => {
     const newListPerson = listPerson.filter((item: any) => item.id !== id)
     setListPerson(newListPerson)
-    if (typeof window !== "undefined" && localStorage) {
-      localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
+    try {
+      if (typeof window !== "undefined" && localStorage) {
+        localStorage?.setItem('listPerson', JSON.stringify(newListPerson))
+      }
+    } catch (error) {
+      console.error('Error while setting data in localStorage:', error);
     }
 
     if (activePerson && activePerson.id === id) {
