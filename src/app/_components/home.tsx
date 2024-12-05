@@ -84,13 +84,8 @@ export default function Home() {
     }
   }
 
-  const handleAddPerson = () => {
-    if (!namePerson) {
-      setIsErrorRequired(true)
-      return
-    }
-
-    const userObj: any = { id: short?.generate() || listPerson.length + 1, name: namePerson, isDone: false }
+  const actionAddPerson = (name = namePerson) => {
+    const userObj: any = { id: short?.generate() || listPerson.length + 1, name, isDone: false }
     const questionObj: any = getRandomQuestion()
     const personObj: any = { ...userObj, question: { ...questionObj }}
 
@@ -118,6 +113,27 @@ export default function Home() {
       } catch (error) {
         console.error('Error while setting data in localStorage:', error);
       }
+    }
+  }
+
+  const handleAddPerson = () => {
+    if (!namePerson) {
+      setIsErrorRequired(true)
+      return
+    }
+
+    const splitPerson = namePerson.split(/[/,]/g).map(i=>i.trimStart()).filter(i=>i)
+    if (splitPerson.length === 0) {
+      setIsErrorRequired(true)
+      return
+    }
+
+    try {
+      splitPerson.forEach((name) => {
+        actionAddPerson(name)
+      })
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -270,7 +286,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-[90vh] overflow-auto py-6 sm:pt-12 sm:pb-8 px-3 sm:px-6 lg:px-8 xl:px-14">
+    <div className="h-[90vh] overflow-auto py-6 sm:pt-12 sm:pb-8 px-3 sm:px-6 lg:px-8 xl:px-16">
       { !isLoading ? (
         <>
           <div className="relative top-0 left-0 w-full flex items-center flex-col flex-wrap mb-2">
