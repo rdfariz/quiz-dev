@@ -5,8 +5,9 @@
     "answered": false,
     "listOptions": [
       { "label": "Candi Borobudur.", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "Candi Prambanan", "value": false },
+      { "label": "Candi Gunung Sari", "value": false },
+      { "label": "Candi Muara Takus", "value": false }
     ]
   },
   {
@@ -15,8 +16,9 @@
     "answered": false,
     "listOptions": [
       { "label": "Thomas Alva Edison", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "Alexander Graham Bell", "value": false },
+      { "label": "James Watt", "value": false },
+      { "label": "Isaac Newton", "value": false }
     ]
   },
   {
@@ -25,8 +27,9 @@
     "answered": false,
     "listOptions": [
       { "label": "Jupiter", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "Venus", "value": false },
+      { "label": "Uranus", "value": false },
+      { "label": "Neptunus", "value": false }
     ]
   },
   {
@@ -35,8 +38,9 @@
     "answered": false,
     "listOptions": [
       { "label": "Gunung Everest", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "Gunung Kilimanjaro", "value": false },
+      { "label": "Gunung Fuji", "value": false },
+      { "label": "Gunung Mont Blanc", "value": false }
     ]
   },
   {
@@ -45,8 +49,9 @@
     "answered": false,
     "listOptions": [
       { "label": "Nasi Kuning", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "Nasi Liwet", "value": false },
+      { "label": "Nasi Uduk", "value": false },
+      { "label": "Nasi Goreng", "value": false }
     ]
   },
   {
@@ -55,8 +60,9 @@
     "answered": false,
     "listOptions": [
       { "label": "Ir. Soekarno", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "B.J. Habibie", "value": false },
+      { "label": "Joko Widodo", "value": false },
+      { "label": "Megawati Soekarnoputri", "value": false }
     ]
   },
   {
@@ -65,8 +71,9 @@
     "answered": false,
     "listOptions": [
       { "label": "Tunawisma", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "Katak", "value": false },
+      { "label": "Pensiun", "value": false },
+      { "label": "Bebek", "value": false }
     ]
   },
   {
@@ -75,8 +82,9 @@
     "answered": false,
     "listOptions": [
       { "label": "Huruf K", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "Istana Merdeka", "value": false },
+      { "label": "Kota Tua", "value": false },
+      { "label": "Bundaran HI", "value": false }
     ]
   },
   {
@@ -85,8 +93,9 @@
     "answered": false,
     "listOptions": [
       { "label": "Karena mau cari tempat nongkrong di seberang", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "Karena takut sama bebek", "value": false },
+      { "label": "Karena jalan terlalu sempit", "value": false },
+      { "label": "Karena mau naik ojol", "value": false }
     ]
   },
   {
@@ -95,8 +104,207 @@
     "answered": false,
     "listOptions": [
       { "label": "Karena nggak punya pulsa buat nelpon", "value": true },
-      { "label": "Candi Borobudur 2", "value": false },
-      { "label": "Candi Borobudur 3", "value": false }
+      { "label": "Karena ada masalah dengan teman", "value": false },
+      { "label": "Karena ingin jadi penyanyi", "value": false },
+      { "label": "Karena mengantuk", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 11,
+    "question": "Kenapa kucing suka tidur sepanjang hari?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena kucing malas", "value": false },
+      { "label": "Karena butuh energi untuk berburu", "value": true },
+      { "label": "Karena cuaca terlalu panas", "value": false },
+      { "label": "Karena kucing lebih suka malam", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 12,
+    "question": "Kenapa pohon besar bisa berdiri tegak?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena memiliki akar yang kuat", "value": true },
+      { "label": "Karena batangnya terbuat dari besi", "value": false },
+      { "label": "Karena selalu disiram air", "value": false },
+      { "label": "Karena selalu mendapat sinar matahari", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 13,
+    "question": "Siapa yang pertama kali menginjakkan kaki di bulan?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Neil Armstrong", "value": true },
+      { "label": "Yuri Gagarin", "value": false },
+      { "label": "Buzz Aldrin", "value": false },
+      { "label": "John Glenn", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 14,
+    "question": "Kenapa ikan bisa berenang?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena memiliki sirip", "value": true },
+      { "label": "Karena memiliki sayap", "value": false },
+      { "label": "Karena airnya sangat dalam", "value": false },
+      { "label": "Karena ikan ingin berlari", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 15,
+    "question": "Kenapa pohon bisa menghasilkan oksigen?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena pohon menyerap karbon dioksida", "value": true },
+      { "label": "Karena pohon meminum air", "value": false },
+      { "label": "Karena pohon memakan matahari", "value": false },
+      { "label": "Karena pohon berbicara dengan angin", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 16,
+    "question": "Kenapa manusia harus minum air putih?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena air putih membuat tubuh sehat", "value": true },
+      { "label": "Karena air putih mengandung gula", "value": false },
+      { "label": "Karena air putih memberi energi langsung", "value": false },
+      { "label": "Karena air putih menyegarkan tubuh", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 17,
+    "question": "Apa yang membuat matahari terbenam?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena bumi berputar", "value": true },
+      { "label": "Karena matahari bergerak", "value": false },
+      { "label": "Karena matahari semakin kecil", "value": false },
+      { "label": "Karena matahari kelelahan", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 18,
+    "question": "Apa yang selalu di depan mata tapi tidak bisa dilihat?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Matahari", "value": false },
+      { "label": "Masa depan", "value": true },
+      { "label": "Cermin", "value": false },
+      { "label": "Jari tangan", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 19,
+    "question": "Kenapa orang suka minum kopi pagi hari?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena kopi rasanya enak", "value": false },
+      { "label": "Karena ingin merasa segar", "value": true },
+      { "label": "Karena ingin tidur lebih lama", "value": false },
+      { "label": "Karena sudah kebiasaan", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 20,
+    "question": "Kenapa kita harus makan sayur?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena sayur itu sehat", "value": true },
+      { "label": "Karena sayur mahal", "value": false },
+      { "label": "Karena sayur enak", "value": false },
+      { "label": "Karena sayur bisa buat kenyang", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 21,
+    "question": "Kenapa manusia perlu tidur?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Untuk memberi waktu bagi tubuh untuk beristirahat", "value": true },
+      { "label": "Karena bosan", "value": false },
+      { "label": "Karena butuh waktu untuk bermimpi", "value": false },
+      { "label": "Karena ingin merasa lebih muda", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 22,
+    "question": "Siapa penemu listrik?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Nikola Tesla", "value": true },
+      { "label": "Thomas Edison", "value": false },
+      { "label": "Albert Einstein", "value": false },
+      { "label": "Alexander Graham Bell", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 23,
+    "question": "Kenapa laut berwarna biru?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena pantulan langit", "value": true },
+      { "label": "Karena banyak alga", "value": false },
+      { "label": "Karena air laut mengandung garam", "value": false },
+      { "label": "Karena banyak ikan", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 24,
+    "question": "Apa yang lebih berat, satu ton kapas atau satu ton besi?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Keduanya sama berat", "value": true },
+      { "label": "Besi lebih berat", "value": false },
+      { "label": "Kapas lebih berat", "value": false },
+      { "label": "Bergantung pada ukuran", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 25,
+    "question": "Apa yang bisa terbang tanpa sayap?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Waktu", "value": true },
+      { "label": "Awan", "value": false },
+      { "label": "Pesawat", "value": false },
+      { "label": "Burung", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 26,
+    "question": "Kenapa langit tampak biru?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena pembiasan cahaya", "value": true },
+      { "label": "Karena adanya debu", "value": false },
+      { "label": "Karena atmosfer mengandung gas biru", "value": false },
+      { "label": "Karena matahari berwarna biru", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 27,
+    "question": "Siapa yang pertama kali menemukan benua Amerika?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Christopher Columbus", "value": true },
+      { "label": "Marco Polo", "value": false },
+      { "label": "Vasco da Gama", "value": false },
+      { "label": "Ferdinand Magellan", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 28,
+    "question": "Kenapa daun pada pohon berubah warna saat musim gugur?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Karena perubahan suhu", "value": true },
+      { "label": "Karena daun jatuh", "value": false },
+      { "label": "Karena tanaman mengering", "value": false },
+      { "label": "Karena terlalu banyak air", "value": false }
     ]
   }
 ]

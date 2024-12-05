@@ -234,7 +234,7 @@ export default function Home() {
                       <p className="mb-6 text-lg font-semibold">
                         {activePerson.question.question}</p>
                       <div className="flex flex-col flex-wrap justify-center items-start gap-6">
-                        {activePerson.question.listOptions?.map((option: any, childIndex: any) => (
+                        {activePerson.question.listOptions?.sort(() => Math.random() - 0.5).map((option: any, childIndex: any) => (
                           <button
                             className="btBlueBig px-4 py-2 font-bold flex w-full justify-center items-center flex-wrap cursor-pointer"
                             onClick={() => handleAnswering(option)}
@@ -355,7 +355,7 @@ export default function Home() {
       ) : (
         <div className="flex flex-col items-center flex-wrap">
           {/* <Lottie style={{ width: '50%' }} animationData={LottieData} loop={true} /> */}
-          <p className="relative z-10 font-semibold text-[#868d96] mt-[-40px]">Memuat..</p>
+          <p className="relative z-10 font-semibold text-[#868d96] my-4">Memuat..</p>
         </div>
       )}
     </div>
