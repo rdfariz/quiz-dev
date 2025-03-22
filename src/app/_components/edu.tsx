@@ -1,15 +1,15 @@
 "use client"
-import dataQuestion from '@/app/data.json'
-import { useEffect, useRef, useState } from 'react';
+import dataQuestion from '@/app/dataEdu.json'
+import dataSpecial from '@/app/dataSpecial.json'
+import { useEffect, useRef, useState } from 'react'
 import { AlertTriangle, Trash, Filter, ChevronDown, ChevronUp } from 'react-feather'
 import short from 'short-uuid'
 import CardPerson from '@/app/_components/card-person'
-// import LottieData from '@/app/_assets/lottie/Animation - 1733357726977.json'
-// import Lottie from 'lottie-react'
 
 export default function Home() {
   const [listQuestion, setListQuestion]: any = useState(dataQuestion)
   const [listPerson, setListPerson]: any = useState([])
+  const [listSpecialPerson, setListSpecialPerson]: any = useState([])
   const [activePerson, setActivePerson]: any = useState(null)
   const inputRef: any = useRef(null)
 
@@ -43,6 +43,13 @@ export default function Home() {
       console.error('Error while setting data in localStorage:', error);
     }
   }, [])
+
+  useEffect(() => {
+    const payload = 'Kelompok 1, Kelompok 2, Kelompok 3, Kelompok 4, Kelompok 5, Kelompok 6, Kelompok 7, Kelompok 8'
+    const payloadSpecial = 'Pertanyaan 1, Pertanyaan 2, Pertanyaan 3, Pertanyaan 4'
+    handleAddPerson(payload)
+    handleAddSpecialPerson(payloadSpecial)
+  }, [])
   
   const renderOptionSymbol = (index: number = 0) => {
     if (index === 0) {
@@ -56,37 +63,47 @@ export default function Home() {
     }
   }
 
-  const getRandomQuestion = () => {
-    const shuffledQuestions = listQuestion.map((item: any) => {
-      return {
-        ...item,
-        listOptions: item.listOptions.sort(() => Math.random() - 0.5)
-      }
-    });
+  const getRandomQuestion = (index: number = 0) => {
+    const shuffledQuestions = listQuestion
+      .filter((item: any) => item.answered === false)
+      .map((item: any) => {
+        return {
+          ...item,
+          listOptions: item.listOptions.sort(() => Math.random() - 0.5)
+        }
+      });
 
-    const allQuestionRandom = shuffledQuestions[Math.floor(Math.random() * shuffledQuestions.length)]
-    const questionNotAnswered = shuffledQuestions.filter((item: any) => item.answered === false)
-    const res = questionNotAnswered[Math.floor(Math.random() * questionNotAnswered.length)]
+    // const allQuestionRandom = shuffledQuestions[Math.floor(Math.random() * shuffledQuestions.length)]
+    const questionNotAnswered = shuffledQuestions
+    const res = questionNotAnswered[index]
+    console.log(shuffledQuestions)
 
     if (res) {
       const payloadQuestion = listQuestion.map((item: any) => item.idQuestion === res.idQuestion
         ? ({ ...item, answered: true })
         : item)
       setListQuestion(payloadQuestion)
+    } else {
+      const payloadQuestion = listQuestion.map((item: any) => ({
+        ...item,
+        answered: false
+      }));
+      setListQuestion(payloadQuestion)
+      return getRandomQuestion()
     }
 
-    return res || allQuestionRandom || listQuestion[0]
+    return res
   }
 
   const handleKeyDown = (e: any) => {
     if (e.key === 'Enter') {
-      handleAddPerson()
+      handleAddPerson(namePerson)
     }
   }
 
   const actionAddPerson = (name = namePerson) => {
     const userObj: any = { id: short?.generate() || listPerson.length + 1, name, isDone: false }
-    const questionObj: any = getRandomQuestion()
+    const questionObj: any = getRandomQuestion(listPerson.length)
     const personObj: any = { ...userObj, question: { ...questionObj }}
 
     try {
@@ -116,13 +133,13 @@ export default function Home() {
     }
   }
 
-  const handleAddPerson = () => {
-    if (!namePerson) {
+  const handleAddPerson = (nameInput = namePerson) => {
+    if (!nameInput) {
       setIsErrorRequired(true)
       return
     }
 
-    const splitPerson = namePerson.split(/[/,]/g).map(i=>i.trimStart()).filter(i=>i)
+    const splitPerson = nameInput.split(/[/,]/g).map(i=>i.trimStart()).filter(i=>i)
     if (splitPerson.length === 0) {
       setIsErrorRequired(true)
       return
@@ -131,6 +148,53 @@ export default function Home() {
     try {
       splitPerson.forEach((name) => {
         actionAddPerson(name)
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const actionAddSpecialPerson = (name = namePerson) => {
+    const userObj: any = { id: short?.generate() || listSpecialPerson.length + 1, name, isDone: false }
+    const questionObj: any = getRandomQuestion(listSpecialPerson.length)
+    const personObj: any = { ...userObj, question: { ...questionObj }}
+
+    try {
+      // set active person if empty
+      const payload: any = listSpecialPerson
+      if (payload.length === 0 || (!activePerson && payload.length > 0)) {
+        setActivePerson({ ...personObj })  
+      }
+
+      payload.push(personObj)
+      setListSpecialPerson(payload)
+    } catch (error) {
+    } finally {
+      try {
+        if (typeof window !== "undefined" && localStorage) {
+          localStorage?.setItem('listSpecialPerson', JSON.stringify(listSpecialPerson))
+        }
+      } catch (error) {
+        console.error('Error while setting data in localStorage:', error);
+      }
+    }
+  }
+
+  const handleAddSpecialPerson = (nameInput = '') => {
+    if (!nameInput) {
+      setIsErrorRequired(true)
+      return
+    }
+
+    const splitPerson = nameInput.split(/[/,]/g).map(i=>i.trimStart()).filter(i=>i)
+    if (splitPerson.length === 0) {
+      setIsErrorRequired(true)
+      return
+    }
+
+    try {
+      splitPerson.forEach((name) => {
+        actionAddSpecialPerson(name)
       })
     } catch (err) {
       console.log(err)
@@ -345,7 +409,7 @@ export default function Home() {
                       }
                     </div>
                     <div className="w-full grid sm:grid-cols-2 gap-5 mt-5 px-1 sm:px-0">
-                      <button className="w-full btBlueBig font-bold flex gap-4 justify-center items-center flex-wrap cursor-pointer" onClick={handleAddPerson}>
+                      <button className="w-full btBlueBig font-bold flex gap-4 justify-center items-center flex-wrap cursor-pointer" onClick={() => handleAddPerson(namePerson)}>
                         <strong>Tambah Peserta</strong>
                       </button>
                       <button
@@ -452,6 +516,32 @@ export default function Home() {
                     { filteredList && filteredList.length > 0 ? (
                       <>
                         {filteredList.map((person: any, index: number) => (
+                          <CardPerson
+                            data={person}
+                            handleDelete={handleDeletePerson}
+                            handleSelected={handleSelected}
+                            handleIsCollapse={setIsCollapse}
+                            key={person.id}
+                            isCollapse={isCollapse}
+                          />
+                        ))}
+                      </>
+                    ) : (
+                      <div className="col-span-full">
+                        {/* <div className="relative h-[220px] w-full">
+                          <Image className="object-contain" alt="" fill src="/images/notfound.png" />
+                        </div> */}
+                        <p className="font-semibold text-[#868d96] opacity-90 text-center my-4">Belum ada peserta</p>
+                      </div>
+                    ) }
+                  </div>
+                </div>
+
+                <div className="mt-10">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+                    { listSpecialPerson && listSpecialPerson.length > 0 ? (
+                      <>
+                        {listSpecialPerson.map((person: any, index: number) => (
                           <CardPerson
                             data={person}
                             handleDelete={handleDeletePerson}

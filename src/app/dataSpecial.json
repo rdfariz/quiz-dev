@@ -1,0 +1,46 @@
+[
+  {
+    "idQuestion": 1,
+    "question": "Berapa Jumlah Kota Diindonesia",
+    "answered": false,
+    "listOptions": [
+      { "label": "Platform Indonesia Belajar", "value": true },
+      { "label": "Platform Inisiatif Belajar", "value": false },
+      { "label": "Platform Indonesia Mengajar", "value": false },
+      { "label": "Platform Indonesia Pintar", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 2,
+    "question": "Program Pemerintah yang menjadi mitra Pijar Mahir?",
+    "answered": false,
+    "listOptions": [
+      { "label": "PRAKERJA", "value": true },
+      { "label": "", "value": false },
+      { "label": "Candi Gunung Sari", "value": false },
+      { "label": "Candi Muara Takus", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 3,
+    "question": "Program Pemerintah yang menjadi mitra Pijar Mahir?",
+    "answered": false,
+    "listOptions": [
+      { "label": "PRAKERJA", "value": true },
+      { "label": "", "value": false },
+      { "label": "Candi Gunung Sari", "value": false },
+      { "label": "Candi Muara Takus", "value": false }
+    ]
+  },
+  {
+    "idQuestion": 4,
+    "question": "Apa nama website Pijar Belajar?",
+    "answered": false,
+    "listOptions": [
+      { "label": "Pijarbelajar.id", "value": true },
+      { "label": "Pijarbelajar.com", "value": false },
+      { "label": "Pijarbelajar.edu", "value": false },
+      { "label": "Pijarbelajar.id", "value": false }
+    ]
+  }
+]
